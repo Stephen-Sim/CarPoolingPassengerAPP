@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "citiVGyLoGWNet/VsmRfPkidIe39w3C5LOWhLS7Uw6j7FhtzeHU92ksvKXpONKtAu+F6iJkIcMhI2R42tskDjQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\CarPooling System\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

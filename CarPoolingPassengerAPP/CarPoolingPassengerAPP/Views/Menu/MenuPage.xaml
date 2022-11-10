@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:CarPoolingPassengerAPP.ViewModels.Menu"
+             x:Class="CarPoolingPassengerAPP.Views.Menu.MenuPage"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid Margin="10" RowDefinitions="60, 630">
+            <Image Margin="0, 0, 0, 10" Source="header" HorizontalOptions="Start"/>
+
+            <Frame Grid.Row="1" BorderColor="Black" Padding="1">
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Frame BorderColor="LightGray" Padding="0, 10, 0, 10">
+                        <Grid ColumnDefinitions="70, *, 30" Margin="10">
+                            <Image Source="{Binding ProfileImage, TargetNullValue='profile'}" Margin="0, 0, 10, 0"/>
+                            <StackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                <Label Text="{Binding User.Username}" FontSize="25" FontAttributes="Bold"/>
+                                <Label Text="{Binding User.PhoneNo}" FontSize="16"/>
+                            </StackLayout>
+
+                            <ImageButton BackgroundColor="Transparent" Source="navigation" Grid.Column="2" VerticalOptions="CenterAndExpand" Command="{Binding EditImageButtonClick}"/>
+                        </Grid>
+                    </Frame>
+
+                    <StackLayout>
+                        <Frame Margin="0, -10, 0, 0" BorderColor="LightGray">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangePasswordFrameClicked}"/>
+                            </Frame.GestureRecognizers>
+                            <Label Text="Change Password" FontAttributes="Bold" FontSize="25"/>
+                        </Frame>
+
+                        <Frame Margin="0, -10, 0, 0" BorderColor="LightGray">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding AboutTheAppFrameClicked}"/>
+                            </Frame.GestureRecognizers>
+                            <Label Text="About the App" FontAttributes="Bold" FontSize="25"/>
+                        </Frame>
+
+                        <Frame Margin="0, -10, 0, 0" BorderColor="LightGray">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ExitFrameClicked}"/>
+                            </Frame.GestureRecognizers>
+                            <Label Text="Exit" FontAttributes="Bold" FontSize="25"/>
+                        </Frame>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

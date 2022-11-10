@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:CarPoolingPassengerAPP.ViewModels.Menu" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             x:Class="CarPoolingPassengerAPP.Views.Menu.EditProfilePage">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BackgroundColor" Value="#f5c542"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <menu:EditProfilePageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="60, *" Margin="10">
+            <Image Margin="0, 0, 0, 10" Source="header" HorizontalOptions="Start"/>
+
+            <StackLayout Grid.Row="1" Margin="3" VerticalOptions="CenterAndExpand">
+                <Frame Margin="10" Padding="0" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="80">
+                    <Image Source="profile" HeightRequest="130"/>
+                </Frame>
+            
+                <Grid ColumnDefinitions="*, *" Margin="0, 10, 0, 0">
+                    <StackLayout>
+                        <Label Text="First Name"/>
+                        <Entry Placeholder="First Name" Text="{Binding User.FirstName}"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1">
+                        <Label Text="Last Name"/>
+                        <Entry Placeholder="Last Name" Text="{Binding User.LastName}"/>
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout Margin="0, 10, 0, 0">
+                    <Label Text="Phone Number"/>
+                    <Entry Placeholder="Phone Number" Text="{Binding User.PhoneNo}" Keyboard="Numeric"  MaxLength="11"/>
+                </StackLayout>
+
+                <Label Text="Gender" Margin="0, 10, 0, 0"/>
+                <Grid ColumnDefinitions="auto, *, auto, *">
+                    <RadioButton IsChecked="{Binding Genders[0], Mode=TwoWay}"/>
+                    <Label Grid.Column="1" Text="Male" VerticalOptions="Center"/>
+
+                    <RadioButton Grid.Column="2" IsChecked="{Binding Genders[1], Mode=TwoWay}"/>
+                    <Label Grid.Column="3" Text="Female" VerticalOptions="Center"/>
+                </Grid>
+
+                <StackLayout Margin="0, 10, 0, 0">
+                    <Label Text="Date of Birth"/>
+                    <DatePicker Date="{Binding User.DateOfBirth, TargetNullValue={x:Static sys:DateTime.Now}}"/>
+                </StackLayout>
+
+                <Grid ColumnDefinitions="*, *" Margin="0, 10, 0, 0">
+                    <Button Text="Edit Profile" Command="{Binding EditProfileButtonClicked}"/>
+                    <Button Grid.Column="1" Text="Cancel" Command="{Binding CancelButtonClicked}"/>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

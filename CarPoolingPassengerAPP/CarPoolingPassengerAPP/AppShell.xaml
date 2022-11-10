@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:home="clr-namespace:CarPoolingPassengerAPP.Views.Home"
+       xmlns:menu="clr-namespace:CarPoolingPassengerAPP.Views.Menu"
+       xmlns:auth="clr-namespace:CarPoolingPassengerAPP.Views.Auth"
+       x:Class="CarPoolingPassengerAPP.AppShell">
+
+    <TabBar>
+        <Tab Title="Home" Icon="home.png" Route="HomePage">
+            <ShellContent  ContentTemplate="{DataTemplate home:HomePage}"/>
+        </Tab>
+        <Tab Title="Request" Icon="request.png" Route="RequestPage">
+            <ShellContent ContentTemplate="{DataTemplate home:HomePage}"/>
+        </Tab>
+        <Tab Title="Menu" Icon="menu.png" Route="MenuPage">
+            <ShellContent ContentTemplate="{DataTemplate menu:MenuPage}"/>
+        </Tab>
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate auth:LoginPage}" />
+    </TabBar>
+</Shell>

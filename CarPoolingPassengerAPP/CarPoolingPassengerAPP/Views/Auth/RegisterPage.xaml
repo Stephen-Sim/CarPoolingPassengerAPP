@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:auth="clr-namespace:CarPoolingPassengerAPP.ViewModels.Auth"
+             x:Class="CarPoolingPassengerAPP.Views.Auth.RegisterPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <auth:RegisterPageViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#f5c542"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Image Source="logo" HeightRequest="250"/>
+
+                <StackLayout>
+                    <Grid ColumnDefinitions="*, *" Margin="10">
+                        <StackLayout>
+                            <Label Text="First Name" FontSize="20" FontAttributes="Bold"/>
+                            <Entry Placeholder="First Name" Text="{Binding FirstName}"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1">
+                            <Label Text="Last Name" FontSize="20" FontAttributes="Bold"/>
+                            <Entry Placeholder="Last Name" Text="{Binding LastName}"/>
+                        </StackLayout>
+                    </Grid>
+
+                    <StackLayout Margin="10">
+                        <Label Text="Phone Number" FontSize="20" FontAttributes="Bold"/>
+                        <Entry Placeholder="01XXXXXXXXXX" Keyboard="Numeric"  MaxLength="11" Text="{Binding PhoneNo}"/>
+                    </StackLayout>
+
+                    <StackLayout Margin="10">
+                        <Label Text="Password" FontSize="20" FontAttributes="Bold"/>
+                        <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}"/>
+                        <Entry Placeholder="Confrim Password" IsPassword="True" Text="{Binding ConfirmPassword}"/>
+                    </StackLayout>
+
+                    <Button Text="Register" Margin="10" Command="{Binding RegisterButtonClicked}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

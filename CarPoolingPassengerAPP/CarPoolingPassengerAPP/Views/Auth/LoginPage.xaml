@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:auth="clr-namespace:CarPoolingPassengerAPP.ViewModels.Auth"
+             x:Class="CarPoolingPassengerAPP.Views.Auth.LoginPage"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <auth:LoginPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BackgroundColor" Value="#f5c542"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="15" VerticalOptions="CenterAndExpand">
+                <Image Source="logo" HeightRequest="250"/>
+                <Label Text="Sign In" FontSize="27" FontAttributes="Bold"/>
+
+                <StackLayout>
+                    <Entry Placeholder="Username or Phone Number" Text="{Binding Username}"/>
+                    <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}"/>
+                    
+                    <Label Text="New User" TextColor="Blue" TextDecorations="Underline" HorizontalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NewUserLabelClick}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    
+                    <Button Text="Sign In" Command="{Binding SignInButtonClick}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
