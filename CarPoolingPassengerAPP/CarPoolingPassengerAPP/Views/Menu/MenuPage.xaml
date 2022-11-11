@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:CarPoolingPassengerAPP.ViewModels.Menu"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CarPoolingPassengerAPP.Views.Menu.MenuPage"
              Shell.NavBarIsVisible="False">
 
@@ -12,7 +12,9 @@
                 <StackLayout VerticalOptions="StartAndExpand">
                     <Frame BorderColor="LightGray" Padding="0, 10, 0, 10">
                         <Grid ColumnDefinitions="70, *, 30" Margin="10">
-                            <Image Source="{Binding ProfileImage, TargetNullValue='profile'}" Margin="0, 0, 10, 0"/>
+                            <Frame BackgroundColor="Transparent" HorizontalOptions="Center" Padding="0" Margin="0" CornerRadius="50" HeightRequest="70" WidthRequest="70">
+                                <Image Source="{Binding ProfileImage, TargetNullValue='profile'}" HorizontalOptions="CenterAndExpand"/>
+                            </Frame>
                             <StackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
                                 <Label Text="{Binding User.Username}" FontSize="25" FontAttributes="Bold"/>
                                 <Label Text="{Binding User.PhoneNo}" FontSize="16"/>

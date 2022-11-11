@@ -16,7 +16,6 @@ namespace CarPoolingPassengerAPP.Views.Menu
         public MenuPage()
         {
             InitializeComponent();
-            this.BindingContext = new MenuPageViewModel();
         }
 
         protected override void OnAppearing()

@@ -1795,7 +1795,7 @@
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2196"
+          "Xamarin.Forms": "5.0.0.2125"
         },
         "compile": {
           "bin/placeholder/CarPoolingPassengerAPP.dll": {}

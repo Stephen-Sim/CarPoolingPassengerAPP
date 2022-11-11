@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Input;
 using System.Xml.Linq;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CarPoolingPassengerAPP.ViewModels.Menu
@@ -79,6 +80,59 @@ namespace CarPoolingPassengerAPP.ViewModels.Menu
             }
         }
 
+        public ICommand ProfilePictureImageButtonClicked
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    var res = await App.Current.MainPage.DisplayActionSheet("Options", "Cancel", null, "From File", "Camera", "Remove Profile");
+
+                    if (res == "From File" || res == "Camera")
+                    {
+                        var image = res == "From File" ? await MediaPicker.PickPhotoAsync(new MediaPickerOptions
+                        {
+                            Title = "Please pick a photo"
+                        }) :
+                        await MediaPicker.CapturePhotoAsync(new MediaPickerOptions
+                        {
+                            Title = "Please pick a photo"
+                        });
+
+                        if (image != null)
+                        {
+                            try
+                            {
+                                var stream = await image.OpenReadAsync();
+                                ProfileImage = ImageSource.FromStream(() => stream);
+                                user.ProfileImage = GetImageStreamAsBytes(stream);
+                            }
+                            catch (Exception err)
+                            {
+                                Console.WriteLine(err.Message);
+                                return;
+                            }
+                        }
+                    }
+                    else if (res == "Remove Profile")
+                    {
+                        user.ProfileImage = null;
+                        ProfileImage = null;
+                    }
+
+                });
+            }
+        }
+
+        private byte[] GetImageStreamAsBytes(Stream input)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                input.CopyTo(ms);
+                return ms.ToArray();
+            }
+        }
+
         public ICommand EditProfileButtonClicked
         {
             get
@@ -93,11 +147,6 @@ namespace CarPoolingPassengerAPP.ViewModels.Menu
 
                     User.Username = $"{User.FirstName.Trim()} {User.LastName.Trim()}";
                     User.Gender = Genders[0] == true ? "Male" : "Female";
-
-                    if (ProfileImage != null)
-                    {
-
-                    }
 
                     var token = Application.Current.Properties["token"] as string;
                     var res = await authService.EditProfile(token, User);
