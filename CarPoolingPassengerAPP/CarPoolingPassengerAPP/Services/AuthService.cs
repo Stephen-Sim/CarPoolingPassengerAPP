@@ -16,7 +16,7 @@ namespace CarPoolingPassengerAPP.Services
 {
     public class AuthService
     {
-        private string url = "http://10.105.13.82:45455/api/auth/";
+        private string url = "http://10.105.13.82:45456/api/auth/";
         public HttpClient client { get; set; }
 
         public AuthService()

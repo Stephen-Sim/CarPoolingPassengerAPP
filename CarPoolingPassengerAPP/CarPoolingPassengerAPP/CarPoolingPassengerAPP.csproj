@@ -11,13 +11,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Commons\Fonts\Consolas.ttf" />
+    <None Remove="Commons\Fonts\Roboto-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Commons\Fonts\Consolas.ttf" />
+    <EmbeddedResource Include="Commons\Fonts\Roboto-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commons\" />
     <Folder Include="ViewModels\Home\" />
   </ItemGroup>
 

@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CarPoolingPassengerAPP.App">
     <Application.Resources>
-
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Roboto"/>
+        </Style>
     </Application.Resources>
 </Application>
