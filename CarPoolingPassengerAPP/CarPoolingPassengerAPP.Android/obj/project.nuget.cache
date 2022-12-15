@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "H8XCY+48d0k0xSuyJ64+BKmSI0KVdeqF+zsGnJ2tuYqSU878q3oFVtBpV4qu1L7oGuxpt3rgWJ/mqj/DwmyU8A==",
+  "dgSpecHash": "LaGeJCjI3kF4RUJF228mEkLmtrvcovrZa8niio4VuKqE0TY8BopVFGcSk3pFJ4lmEvtL+JMdLDV8ljtxuhRrQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\simsh\\Desktop\\CarPooling System\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP.Android\\CarPoolingPassengerAPP.Android.csproj",
   "expectedPackageFiles": [
@@ -59,10 +59,16 @@
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.androidx.versionedparcelable\\1.1.1.8\\xamarin.androidx.versionedparcelable.1.1.1.8.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.8\\xamarin.androidx.viewpager.1.0.0.8.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.10\\xamarin.androidx.viewpager2.1.0.0.10.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.build.download\\0.10.0\\xamarin.build.download.0.10.0.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2125\\xamarin.forms.maps.5.0.0.2125.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.google.android.material\\1.4.0.2\\xamarin.google.android.material.1.4.0.2.nupkg.sha512",
-    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.googleplayservices.base\\117.1.0\\xamarin.googleplayservices.base.117.1.0.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.googleplayservices.basement\\117.1.0\\xamarin.googleplayservices.basement.117.1.0.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.googleplayservices.maps\\117.0.0\\xamarin.googleplayservices.maps.117.0.0.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.googleplayservices.tasks\\117.0.0\\xamarin.googleplayservices.tasks.117.0.0.nupkg.sha512"
   ],
   "logs": []
 }
