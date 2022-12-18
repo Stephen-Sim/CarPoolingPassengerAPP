@@ -6,6 +6,7 @@ namespace CarPoolingPassengerAPP.Models
 {
     public class Request
     {
+        public decimal? PayAmount { get; set; }
         public decimal? FromLatitude { get; set; }
         public decimal? FromLongitude { get; set; }
         public string FromAddress { get; set; } = string.Empty;

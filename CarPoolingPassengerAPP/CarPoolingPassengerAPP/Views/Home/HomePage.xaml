@@ -18,7 +18,10 @@
                     <Grid ColumnDefinitions="50, *" Margin="5">
                         <Image Source="current"/>
                         <StackLayout Grid.Column="1">
-                            <Button Text="From: Current Location" BackgroundColor="Transparent" TextColor="Gray" FontSize="18" Padding="-110,0,0,0" Command="{Binding PinStartLocationEditorClicked}"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding PinLacationStackLayoutTapped}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="{Binding FromButtonText}" TextColor="{Binding ButtonTextColor}" FontSize="18" Padding="7"/>
                             <BoxView HeightRequest="0.5" BackgroundColor="Black"/>
                         </StackLayout>
                     </Grid>
@@ -26,22 +29,25 @@
                     <Grid Grid.Row="1" ColumnDefinitions="50, *" Margin="5">
                         <Image Source="desti"/>
                         <StackLayout Grid.Column="1">
-                            <Button Text="To: Destination Location" BackgroundColor="Transparent" TextColor="Gray" FontSize="18" Padding="-110,0,0,0" Command="{Binding PinStartLocationEditorClicked}"/>
-                            <BoxView HeightRequest="0.5" BackgroundColor="Black"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding PinLacationStackLayoutTapped}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="{Binding ToButtonText}" TextColor="{Binding ButtonTextColor}" FontSize="18" Padding="8"/>
+                            <BoxView HeightRequest="0.2" BackgroundColor="Black"/>
                         </StackLayout>
                     </Grid>
 
                     <Grid Grid.Row="2" ColumnDefinitions="50, *" Margin="5">
                         <Image Source="people"/>
-                        <Entry Grid.Column="1" Keyboard="Numeric" Placeholder="Numbers of Passenger"/>
+                        <ContentView Grid.Column="1" Content="{Binding NumberOfPassengerEntry}"/>
                     </Grid>
                 </Grid>
 
-                <ContentView HeightRequest="450" Content="{Binding Map}"/>
+                <ContentView HeightRequest="420" Content="{Binding Map}"/>
 
             </StackLayout>
 
-            <Button Grid.Row="2" Text="RM 4.00 - Place your Request" VerticalOptions="EndAndExpand" BackgroundColor="#f5c542"/>
+            <Button Grid.Row="2" Text="{Binding ButtonText}" Command="{Binding PlaceRequestButtonClicked}" VerticalOptions="EndAndExpand" BackgroundColor="#f5c542"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

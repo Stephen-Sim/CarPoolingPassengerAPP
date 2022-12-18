@@ -43,6 +43,7 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
 
                 Map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position((double)Request.FromLatitude, (double)Request.FromLongitude), Distance.FromMiles(1)));
                 Map.Pins.Add(StartPin);
+
             }
         }
 
@@ -57,10 +58,10 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
         public PinEndLocationPageViewModel()
         {
             Map = new Map() { IsShowingUser = true };
-            Map.PropertyChanged += Map_PropertyChangedAsync;
+            Map.PropertyChanged += Map_PropertyChanged;
         }
 
-        private async void Map_PropertyChangedAsync(object sender, PropertyChangedEventArgs e)
+        private void Map_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             var mapSender = (Map)sender;
 
@@ -80,7 +81,7 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
 
                     if (distance > 30)
                     {
-                        await Application.Current.MainPage.DisplayAlert("Alert", "The distance between two location have exceeded 30km.", "Select Again");
+                        await Application.Current.MainPage.DisplayAlert("Alert", "The distance between two locations has exceeded 30km.", "Select Again");
                         return;
                     }
 

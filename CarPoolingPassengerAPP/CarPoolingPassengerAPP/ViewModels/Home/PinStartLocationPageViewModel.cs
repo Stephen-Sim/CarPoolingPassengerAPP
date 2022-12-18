@@ -73,10 +73,10 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
         public PinStartLocationPageViewModel()
         {
             Map = new Map() { IsShowingUser = true };
-            Map.PropertyChanged += Map_PropertyChangedAsync;
+            Map.PropertyChanged += Map_PropertyChanged;
         }
 
-        private async void Map_PropertyChangedAsync(object sender, PropertyChangedEventArgs e)
+        private void Map_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             var mapSender = (Map)sender;
 
