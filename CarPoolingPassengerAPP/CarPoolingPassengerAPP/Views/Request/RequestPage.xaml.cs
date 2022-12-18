@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarPoolingPassengerAPP.ViewModels.Request;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace CarPoolingPassengerAPP.Views.Request
         public RequestPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            this.BindingContext = new RequestPageViewModel();
         }
     }
 }

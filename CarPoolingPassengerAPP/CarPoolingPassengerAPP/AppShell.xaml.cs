@@ -1,13 +1,6 @@
-﻿using CarPoolingPassengerAPP.Services;
-using CarPoolingPassengerAPP.Views.Auth;
+﻿using CarPoolingPassengerAPP.Views.Auth;
 using CarPoolingPassengerAPP.Views.Home;
 using CarPoolingPassengerAPP.Views.Menu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,7 +19,8 @@ namespace CarPoolingPassengerAPP
             // Home
             Routing.RegisterRoute($"Home/{nameof(PinStartLocationPage)}", typeof(PinStartLocationPage));
             Routing.RegisterRoute($"Home/{nameof(PinEndLocationPage)}", typeof(PinEndLocationPage));
-
+            Routing.RegisterRoute($"Home/{nameof(ConfirmRequestPage)}", typeof(ConfirmRequestPage));
+            
             // Menu
             Routing.RegisterRoute($"Menu/{nameof(EditProfilePage)}", typeof(EditProfilePage));
             Routing.RegisterRoute($"Menu/{nameof(ChangePasswordPage)}", typeof(ChangePasswordPage));

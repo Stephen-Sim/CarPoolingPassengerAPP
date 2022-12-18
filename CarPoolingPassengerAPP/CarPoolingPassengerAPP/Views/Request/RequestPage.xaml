@@ -1,12 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             Shell.NavBarIsVisible="False"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CarPoolingPassengerAPP.Views.Request.RequestPage">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Margin="10" RowDefinitions="60, *">
+            <Image Margin="0, 0, 0, 10" Source="header" HorizontalOptions="Start"/>
+
+            <StackLayout Grid.Row="1">
+                <ListView ItemsSource="{Binding Requests}" HasUnevenRows="True" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsRefreshing}" RefreshCommand="{Binding ListViewRereshed}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BorderColor="Black" HeightRequest="100" Padding="10" Margin="5" BackgroundColor="LightYellow">
+                                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                        <Label FontSize="20">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Request Number - "/>
+                                                    <Span Text="{Binding RequestNumber}" TextColor="Green"/>
+                                                    <Span Text="{Binding DisplayNumOfPerson}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Grid ColumnDefinitions="*, *">
+                                            <Label FontSize="15">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="📍"/>
+                                                        <Span Text="{Binding DiplayFromAddress}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+
+                                            <Label FontSize="15" Grid.Column="1">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="📍"/>
+                                                        <Span Text="{Binding DisplayToAddress}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </Grid>
+
+                                        <Label FontSize="15" Grid.Column="1">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding DisplayTime}"/>
+                                                    <Span Text="{Binding Status}" TextColor="Red"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

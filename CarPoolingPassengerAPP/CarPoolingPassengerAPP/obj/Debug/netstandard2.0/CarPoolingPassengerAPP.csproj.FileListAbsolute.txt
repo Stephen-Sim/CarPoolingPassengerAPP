@@ -46,3 +46,4 @@ C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassen
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Home\PinStartLocationPage.xaml.g.cs
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Request\RequestPage.xaml.g.cs
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Home\PinEndLocationPage.xaml.g.cs
+C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Home\ConfirmRequestPage.xaml.g.cs

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:home="clr-namespace:CarPoolingPassengerAPP.ViewModels.Home"
+             Shell.PresentationMode="ModalAnimated"
+             x:Class="CarPoolingPassengerAPP.Views.Home.ConfirmRequestPage">
+    <ContentPage.BindingContext>
+        <home:ConfirmRequestPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid Margin="10, 10, 10, 5" RowDefinitions="60, *, 100, 70">
+            <Image Margin="0, 0, 0, 10" Source="header" HorizontalOptions="Start"/>
+
+            <StackLayout Grid.Row="1">
+                <ContentView HeightRequest="400" Content="{Binding Map}"/>
+                <DatePicker Date="{Binding SelectedDate}"/>
+                <TimePicker Time="{Binding SelectedTime}"/>
+            </StackLayout>
+
+            <Grid Grid.Row="2" RowDefinitions="20, *" ColumnDefinitions="*, *, *">
+                <Label Text="{Binding AddonsText}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="3" FontSize="16" FontAttributes="Bold"/>
+                <Frame Grid.Row="1" Margin="0, 10, 10, 0" Padding="0" BackgroundColor="{Binding SelectAddons[0]}" CornerRadius="50">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddonsFrameClicked}" CommandParameter="0"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="RM 2.00" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="1" Margin="0, 10, 10, 0" Padding="0" BackgroundColor="{Binding SelectAddons[1]}" CornerRadius="50">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddonsFrameClicked}" CommandParameter="1"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="RM 4.00" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="2" Margin="0, 10, 10, 0" Padding="0" BackgroundColor="{Binding SelectAddons[2]}" CornerRadius="50">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddonsFrameClicked}" CommandParameter="2"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="RM 6.00" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                </Frame>
+            </Grid>
+
+            <Grid Grid.Row="3" ColumnDefinitions="*, *" Margin="0, 10, 0, 10">
+                <Button Text="Confirm" Command="{Binding ConfirmButtonClicked}" BackgroundColor="#f5c542"/>
+                <Button Grid.Column="1" Text="Cancel" Command="{Binding CancelButtonClicked}" BackgroundColor="#f5c542"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

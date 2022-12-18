@@ -23,8 +23,20 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
             get { return stringRequest; }
             set
             {
+                if (value == null)
+                {
+                    Map = new Map() { IsShowingUser = true };
+                    stringRequest = string.Empty;
+                    ButtonTextColor = "Gray"; 
+                    ButtonText = "Place your Request";
+                    ToButtonText = "To: Destination Location";
+                    FromButtonText = "From: Current Location";
+                    NumberOfPassengerEntry.Text = string.Empty;
+                    return;
+                }
+
                 stringRequest = Uri.UnescapeDataString(value ?? string.Empty);
-                Request = JsonConvert.DeserializeObject<Request>(stringRequest);
+                Request = JsonConvert.DeserializeObject<RequestRequest>(stringRequest);
 
                 var StartPin = new Pin
                 {
@@ -48,11 +60,32 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
 
                 ButtonTextColor = "Black";
 
-                FromButtonText = Request.FromAddress.Length > 35 ? Request.FromAddress.Substring(0, 30) + "...." : Request.FromAddress;
-                ToButtonText = Request.ToAddress.Length > 35 ? Request.ToAddress.Substring(0, 30) + "...." : Request.ToAddress;
+                FromButtonText = Request.FromAddress.Length > 33 ? Request.FromAddress.Substring(0, 28) + "...." : Request.FromAddress;
+                ToButtonText = Request.ToAddress.Length > 33 ? Request.ToAddress.Substring(0, 28) + "...." : Request.ToAddress;
 
                 var distance = (decimal) Xamarin.Essentials.Location.CalculateDistance((double)Request.FromLatitude, (double)Request.FromLongitude, (double)this.Request.ToLatitude, (double)this.Request.ToLongitude, Xamarin.Essentials.DistanceUnits.Kilometers);
-                ButtonText = $"Enter the Numbers of Passenger, Total : {distance.ToString("0.00")}";
+                ButtonText = $"Enter the Numbers of Passenger (Total : {distance.ToString("0.00")} KM)";
+
+                if (!string.IsNullOrEmpty(NumberOfPassengerEntry.Text))
+                {
+                    var num = int.Parse(NumberOfPassengerEntry.Text);
+
+                    if (num >= 5)
+                    {
+                        ButtonText = $"Passengers Could not more than 4";
+                    }
+                    else if (num <= 0)
+                    {
+                        ButtonText = $"Invalid Value";
+                    }
+                    else
+                    {
+                        Request.NumberOfPassengers = num;
+                        Request.Charges = (decimal)Xamarin.Essentials.Location.CalculateDistance((double)Request.FromLatitude, (double)Request.FromLongitude, (double)this.Request.ToLatitude, (double)this.Request.ToLongitude, Xamarin.Essentials.DistanceUnits.Kilometers);
+                        ButtonText = $"RM {(Request.Charges * num)?.ToString("0.00")} - Place Your Request";
+                    }
+                }
+
             }
         }
 
@@ -76,8 +109,14 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
 
         public Entry NumberOfPassengerEntry { get; set; }
 
-        public Map Map { get; set; }
-        public Request Request { get; set; }
+        private Map map;
+
+        public Map Map
+        {
+            get { return map; }
+            set { map = value; OnPropertyChanged(); }
+        }
+        public RequestRequest Request { get; set; }
 
         private string buttonText = "Place your Request";
 
@@ -119,6 +158,12 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
 
         private void NumberOfPassengerEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (Map.Pins.Count == 0)
+            {
+                ButtonText = $"Place your Request";
+                return;
+            }
+
             if (string.IsNullOrEmpty(NumberOfPassengerEntry.Text))
             {
                 ButtonText = $"Enter the Numbers of Passenger";
@@ -137,8 +182,9 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
             }
             else
             {
-                Request.PayAmount = (decimal)Xamarin.Essentials.Location.CalculateDistance((double)Request.FromLatitude, (double)Request.FromLongitude, (double)this.Request.ToLatitude, (double)this.Request.ToLongitude, Xamarin.Essentials.DistanceUnits.Kilometers);
-                ButtonText = $"RM {(Request.PayAmount * num)?.ToString("0.00")} - Place Your Request";
+                Request.NumberOfPassengers = num;
+                Request.Charges = (decimal)Xamarin.Essentials.Location.CalculateDistance((double)Request.FromLatitude, (double)Request.FromLongitude, (double)this.Request.ToLatitude, (double)this.Request.ToLongitude, Xamarin.Essentials.DistanceUnits.Kilometers);
+                ButtonText = $"RM {(Request.Charges * num)?.ToString("0.00")} - Place Your Request";
             }
 
         }
@@ -166,7 +212,28 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
                     }
                     else
                     {
+                        if (string.IsNullOrEmpty(NumberOfPassengerEntry.Text))
+                        {
+                            await Application.Current.MainPage.DisplayAlert("Alert", "Please Enter the Numbers of Passenger.", "Ok");
+                            return;
+                        }
 
+                        var num = int.Parse(NumberOfPassengerEntry.Text);
+                        
+                        if (num >= 5)
+                        {
+                            ButtonText = $"Passengers Could not more than 4";
+                            return;
+                        }
+                        else if (num <= 0)
+                        {
+                            ButtonText = $"Invalid Value";
+                            return;
+                        }
+
+                        var content = JsonConvert.SerializeObject(this.Request);
+
+                        await Shell.Current.GoToAsync($"Home/{nameof(ConfirmRequestPage)}?StringRequest={content}");
                     }
                 });
             }

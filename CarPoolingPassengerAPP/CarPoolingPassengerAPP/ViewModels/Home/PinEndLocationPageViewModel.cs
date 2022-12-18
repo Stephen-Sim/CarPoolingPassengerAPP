@@ -31,7 +31,7 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
             set 
             {
                 startLocation = Uri.UnescapeDataString(value ?? string.Empty);
-                Request = JsonConvert.DeserializeObject<Request>(startLocation);
+                Request = JsonConvert.DeserializeObject<RequestRequest>(startLocation);
 
                 StartPin = new Pin
                 {
@@ -47,9 +47,9 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
             }
         }
 
-        private Request request;
+        private RequestRequest request;
 
-        public Request Request
+        public RequestRequest Request
         {
             get { return request; }
             set { request = value; OnPropertyChanged(); }
@@ -77,6 +77,12 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
             {
                 return new Command(async () =>
                 {
+                    if ((double)Request.FromLongitude == this.Position.Longitude && (double) Request.FromLatitude ==  this.Position.Longitude)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Alert", "Same Location Selected!!", "Select Again");
+                        return;
+                    }
+
                     var distance = Xamarin.Essentials.Location.CalculateDistance(this.Position.Latitude, this.Position.Longitude, (double)this.Request.FromLatitude, (double)this.Request.FromLongitude, Xamarin.Essentials.DistanceUnits.Kilometers);
 
                     if (distance > 30)
@@ -91,7 +97,7 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
 
                     if (result)
                     {
-                        var Request = new Request
+                        var Request = new RequestRequest
                         {
                             FromLatitude = (decimal)this.Request.FromLatitude,
                             FromLongitude = (decimal)this.Request.FromLongitude,

@@ -33,7 +33,7 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
 
                     if (result)
                     {
-                        var StartLocation = new Request
+                        var StartLocation = new RequestRequest
                         { 
                             FromLatitude = (decimal)this.Position.Latitude,
                             FromLongitude = (decimal)this.Position.Longitude,
