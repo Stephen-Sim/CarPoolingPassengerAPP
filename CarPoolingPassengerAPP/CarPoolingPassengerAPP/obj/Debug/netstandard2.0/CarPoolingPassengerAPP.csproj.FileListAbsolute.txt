@@ -35,7 +35,6 @@ C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassen
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Menu\ChangePasswordPage.xaml.g.cs
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Menu\EditProfilePage.xaml.g.cs
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Menu\MenuPage.xaml.g.cs
-C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\test.xaml.g.cs
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\CarPoolingPassengerAPP.AssemblyInfoInputs.cache
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\CarPoolingPassengerAPP.AssemblyInfo.cs
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\CarPoolingPassengerAPP.csproj.CoreCompileInputs.cache
@@ -44,3 +43,6 @@ C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassen
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\refint\CarPoolingPassengerAPP.dll
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\CarPoolingPassengerAPP.pdb
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\ref\CarPoolingPassengerAPP.dll
+C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Home\PinStartLocationPage.xaml.g.cs
+C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Request\RequestPage.xaml.g.cs
+C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Home\PinEndLocationPage.xaml.g.cs

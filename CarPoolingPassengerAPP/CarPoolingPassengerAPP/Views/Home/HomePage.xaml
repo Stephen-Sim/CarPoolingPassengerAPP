@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns:home="clr-namespace:CarPoolingPassengerAPP.ViewModels.Home"
              x:Class="CarPoolingPassengerAPP.Views.Home.HomePage"
              Shell.NavBarIsVisible="False">
-    <ContentPage.Resources>
-        <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#f5c542"/>
-        </Style>
-    </ContentPage.Resources>
-    
+
+    <ContentPage.BindingContext>
+        <home:HomePageViewModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <Grid Margin="10, 10, 10, 5" RowDefinitions="60, *, auto">
             <Image Margin="0, 0, 0, 10" Source="header" HorizontalOptions="Start"/>
@@ -18,25 +17,31 @@
                 <Grid RowDefinitions="*, *, *">
                     <Grid ColumnDefinitions="50, *" Margin="5">
                         <Image Source="current"/>
-                        <Editor Grid.Column="1" Placeholder="From: Current Location"/>
+                        <StackLayout Grid.Column="1">
+                            <Button Text="From: Current Location" BackgroundColor="Transparent" TextColor="Gray" FontSize="18" Padding="-110,0,0,0" Command="{Binding PinStartLocationEditorClicked}"/>
+                            <BoxView HeightRequest="0.5" BackgroundColor="Black"/>
+                        </StackLayout>
                     </Grid>
 
                     <Grid Grid.Row="1" ColumnDefinitions="50, *" Margin="5">
                         <Image Source="desti"/>
-                        <Editor Grid.Column="1" Placeholder="To: Destination Location"/>
+                        <StackLayout Grid.Column="1">
+                            <Button Text="To: Destination Location" BackgroundColor="Transparent" TextColor="Gray" FontSize="18" Padding="-110,0,0,0" Command="{Binding PinStartLocationEditorClicked}"/>
+                            <BoxView HeightRequest="0.5" BackgroundColor="Black"/>
+                        </StackLayout>
                     </Grid>
 
                     <Grid Grid.Row="2" ColumnDefinitions="50, *" Margin="5">
                         <Image Source="people"/>
-                        <Editor Grid.Column="1" Keyboard="Numeric" Placeholder="Numbers of Passenger"/>
+                        <Entry Grid.Column="1" Keyboard="Numeric" Placeholder="Numbers of Passenger"/>
                     </Grid>
                 </Grid>
 
-                <maps:Map IsShowingUser="True"/>
-                
+                <ContentView HeightRequest="450" Content="{Binding Map}"/>
+
             </StackLayout>
-            
-            <Button Grid.Row="2" Text="RM 4.00 - Place your Request" VerticalOptions="EndAndExpand"/>
+
+            <Button Grid.Row="2" Text="RM 4.00 - Place your Request" VerticalOptions="EndAndExpand" BackgroundColor="#f5c542"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

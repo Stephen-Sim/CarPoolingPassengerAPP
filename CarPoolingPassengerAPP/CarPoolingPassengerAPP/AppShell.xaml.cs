@@ -23,6 +23,10 @@ namespace CarPoolingPassengerAPP
             // Auth
             Routing.RegisterRoute($"Auth/{nameof(RegisterPage)}", typeof(RegisterPage));
 
+            // Home
+            Routing.RegisterRoute($"Home/{nameof(PinStartLocationPage)}", typeof(PinStartLocationPage));
+            Routing.RegisterRoute($"Home/{nameof(PinEndLocationPage)}", typeof(PinEndLocationPage));
+
             // Menu
             Routing.RegisterRoute($"Menu/{nameof(EditProfilePage)}", typeof(EditProfilePage));
             Routing.RegisterRoute($"Menu/{nameof(ChangePasswordPage)}", typeof(ChangePasswordPage));

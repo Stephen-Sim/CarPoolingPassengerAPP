@@ -3,6 +3,7 @@ using CarPoolingPassengerAPP.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Input;
 using System.Xml.Linq;
@@ -101,17 +102,9 @@ namespace CarPoolingPassengerAPP.ViewModels.Menu
 
                         if (image != null)
                         {
-                            try
-                            {
-                                var stream = await image.OpenReadAsync();
-                                ProfileImage = ImageSource.FromStream(() => stream);
-                                user.ProfileImage = GetImageStreamAsBytes(stream);
-                            }
-                            catch (Exception err)
-                            {
-                                Console.WriteLine(err.Message);
-                                return;
-                            }
+                            var stream = await image.OpenReadAsync();
+                            ProfileImage = ImageSource.FromStream(() => stream);
+                            user.ProfileImage = File.ReadAllBytes(image.FullPath);
                         }
                     }
                     else if (res == "Remove Profile")
@@ -121,15 +114,6 @@ namespace CarPoolingPassengerAPP.ViewModels.Menu
                     }
 
                 });
-            }
-        }
-
-        private byte[] GetImageStreamAsBytes(Stream input)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                input.CopyTo(ms);
-                return ms.ToArray();
             }
         }
 

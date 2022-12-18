@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "LaGeJCjI3kF4RUJF228mEkLmtrvcovrZa8niio4VuKqE0TY8BopVFGcSk3pFJ4lmEvtL+JMdLDV8ljtxuhRrQA==",
+  "dgSpecHash": "lCR/EyDex9vmHNqFl+/VsyO+8wZUAciStOkOVjhHeA0tnYZ6cMvvuVNS8H9kvSQiSkJJjMYjDhPfsJ8tNNoT1A==",
   "success": true,
   "projectFilePath": "C:\\Users\\simsh\\Desktop\\CarPooling System\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP.Android\\CarPoolingPassengerAPP.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\simsh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\plugin.currentactivity\\2.1.0.2\\plugin.currentactivity.2.1.0.2.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\plugin.permissions\\3.0.0.12\\plugin.permissions.3.0.0.12.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xam.plugin.geolocator\\4.5.0.6\\xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.android.support.annotations\\25.4.0.2\\xamarin.android.support.annotations.25.4.0.2.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.android.support.compat\\25.4.0.2\\xamarin.android.support.compat.25.4.0.2.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.android.support.core.utils\\25.4.0.2\\xamarin.android.support.core.utils.25.4.0.2.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.androidx.activity\\1.2.4.1\\xamarin.androidx.activity.1.2.4.1.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.androidx.annotation\\1.2.0.1\\xamarin.androidx.annotation.1.2.0.1.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.androidx.annotation.experimental\\1.1.0.1\\xamarin.androidx.annotation.experimental.1.1.0.1.nupkg.sha512",

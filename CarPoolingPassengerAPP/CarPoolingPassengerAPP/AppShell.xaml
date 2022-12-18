@@ -2,6 +2,7 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:home="clr-namespace:CarPoolingPassengerAPP.Views.Home"
+       xmlns:request="clr-namespace:CarPoolingPassengerAPP.Views.Request"
        xmlns:menu="clr-namespace:CarPoolingPassengerAPP.Views.Menu"
        xmlns:auth="clr-namespace:CarPoolingPassengerAPP.Views.Auth"
        x:Class="CarPoolingPassengerAPP.AppShell">
@@ -11,7 +12,7 @@
             <ShellContent  ContentTemplate="{DataTemplate home:HomePage}"/>
         </Tab>
         <Tab Title="Request" Icon="request.png" Route="RequestPage">
-            <ShellContent ContentTemplate="{DataTemplate home:HomePage}"/>
+            <ShellContent ContentTemplate="{DataTemplate request:RequestPage}"/>
         </Tab>
         <Tab Title="Menu" Icon="menu.png" Route="MenuPage">
             <ShellContent ContentTemplate="{DataTemplate menu:MenuPage}"/>
