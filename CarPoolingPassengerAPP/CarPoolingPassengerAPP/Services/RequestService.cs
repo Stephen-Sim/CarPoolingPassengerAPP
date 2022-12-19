@@ -12,7 +12,7 @@ namespace CarPoolingPassengerAPP.Services
 {
     public class RequestService
     {
-        private string url = "http://10.105.13.82:45455/api/request/";
+        private string url = $"{APIConstant.APIURL}request/";
         public HttpClient client { get; set; }
 
         public RequestService()
