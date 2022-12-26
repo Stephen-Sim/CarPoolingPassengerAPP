@@ -129,6 +129,12 @@ namespace CarPoolingPassengerAPP.ViewModels.Menu
                         return;
                     }
 
+                    if (User.PhoneNo.Length < 10)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Alert", "Invalid Phone Number Length", "Ok");
+                        return;
+                    }
+
                     User.Username = $"{User.FirstName.Trim()} {User.LastName.Trim()}";
                     User.Gender = Genders[0] == true ? "Male" : "Female";
 

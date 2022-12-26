@@ -38,6 +38,12 @@ namespace CarPoolingPassengerAPP.ViewModels.Menu
                         return;
                     }
 
+                    if (NewPassword.Length < 6)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Alert", "Password length must be greater than or equal to 6", "Ok");
+                        return;
+                    }
+
                     var token = Application.Current.Properties["token"] as string;
                     var res = await authService.ChangePassword(token, OldPassword, NewPassword);
 

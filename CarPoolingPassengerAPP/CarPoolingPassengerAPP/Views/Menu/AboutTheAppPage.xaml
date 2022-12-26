@@ -16,9 +16,9 @@
                                 <FormattedString>
                                     <Span Text="&#10;1.&#x09;&#x09;To engage in energy saving, the idea of carpooling is introduced where the driver can share his or her vehicle with people who will be going to the same destination.&#10;&#10;"/>
                                     <Span Text="2.&#x09;&#x09;Two target users:&#10;&#x09;&#x09;&#x09;&#x09;a.&#x09;&#x09;Driver&#10;&#x09;&#x09;&#x09;&#x09;b.&#x09;&#x09;Passenger&#10;&#10;"/>
-                                    <Span Text="3.&#x09;&#x09;Diver can view the passenger requests within 2 km radius coverage of the center point of departure node location to destination node location. Drivers can pick-up up to numbers of his or her car capacity (4 seaters or 6 seaters).&#10;&#10;"/>
+                                    <Span Text="3.&#x09;&#x09;Driver can view the passenger requests within 10 km radius coverage of the center point of departure node location to destination node location. Drivers can pick-up up to numbers of his or her car capacity (4 seaters or 6 seaters).&#10;&#10;"/>
                                     <Span Text="4.&#x09;&#x09;The price is calculated RM 1 per kilometer. However, passenger can bid the price for the most priority. Or else, passenger requests will be arranged by the request time. All the payment is done via paying cash after the destination be reached.&#10;&#10;"/>
-                                    <Span Text="5.&#x09;&#x09;Real-time chat service is provided for both terminal communications through the web socket.&#10;&#10;"/>
+                                    <Span Text="5.&#x09;&#x09;Real-time chat service is provided for both terminal communications.&#10;&#10;"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
