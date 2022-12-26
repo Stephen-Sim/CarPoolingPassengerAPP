@@ -1,13 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:chat="clr-namespace:CarPoolingPassengerAPP.ViewModels.Request.Chat"
-             x:Class="CarPoolingPassengerAPP.Views.Request.Chat.ChatDriverPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:chat="clr-namespace:CarPoolingPassengerAPP.ViewModels.Request.Chat" xmlns:customcontrol="clr-namespace:CarPoolingPassengerAPP.CustomControl"
+             x:Class="CarPoolingPassengerAPP.Views.Request.Chat.ChatDriverPage" Shell.TabBarIsVisible="False" Title="{Binding Title}">
 
     <ContentPage.BindingContext>
         <chat:ChatDriverPageViewModel/>
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        
+        <Grid RowDefinitions="*, 60">
+            <customcontrol:AutoScrollListView ItemsSource="{Binding Chats}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="10">
+                                <Grid RowDefinitions="30, *" ColumnDefinitions="*, auto" IsVisible="{Binding IsYourMessage}">
+                                    <Label Grid.Column="1" HorizontalOptions="EndAndExpand"  Padding="0" Margin="0, 10, 0, 0" Text="You" FontSize="15"/>
+                                    <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="LightYellow" Margin="5" BorderColor="Black" CornerRadius="20">
+                                        <StackLayout>
+                                            <Label Text="{Binding Message}"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+
+                                <Grid RowDefinitions="30, *" ColumnDefinitions="auto, *" IsVisible="{Binding IsNotYourMessage}">
+                                    <Label Padding="0" Margin="0, 10, 0, 0" Text="Driver" FontSize="15"/>
+                                    <Frame Grid.Row="1" BackgroundColor="LightYellow" Margin="5" BorderColor="Black" CornerRadius="20">
+                                        <StackLayout>
+                                            <Label Text="{Binding Message}"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </customcontrol:AutoScrollListView>
+
+            <Grid Margin="5" Grid.Row="1" ColumnDefinitions="*, 70">
+                <Entry Placeholder="Message" Text="{Binding Message}" BackgroundColor="#f5f9fa" PlaceholderColor="#969daf"/>
+                <Button Grid.Column="1" BackgroundColor="#f5c542" Command="{Binding SendMessageCommand}" Text="SEND"/>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

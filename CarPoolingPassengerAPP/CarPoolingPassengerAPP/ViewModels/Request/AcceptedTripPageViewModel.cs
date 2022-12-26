@@ -135,7 +135,7 @@ namespace CarPoolingPassengerAPP.ViewModels.Request
             {
                 return new Command(async () =>
                 {
-                    await Shell.Current.GoToAsync($"Chat/{nameof(ChatDriverPage)}");
+                    await Shell.Current.GoToAsync($"Chat/{nameof(ChatDriverPage)}?RequestId={request.Id}");
                 });
             }
         }

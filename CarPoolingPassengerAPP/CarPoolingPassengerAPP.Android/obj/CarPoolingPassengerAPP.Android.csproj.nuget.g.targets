@@ -58,5 +58,7 @@
     <Import Project="$(NuGetPackageRoot)xamarin.androidx.browser\1.3.0.6\buildTransitive\monoandroid90\Xamarin.AndroidX.Browser.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.androidx.browser\1.3.0.6\buildTransitive\monoandroid90\Xamarin.AndroidX.Browser.targets')" />
     <Import Project="$(NuGetPackageRoot)xamarin.forms\5.0.0.2196\buildTransitive\Xamarin.Forms.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\5.0.0.2196\buildTransitive\Xamarin.Forms.targets')" />
     <Import Project="$(NuGetPackageRoot)xamarin.build.download\0.10.0\buildTransitive\Xamarin.Build.Download.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.build.download\0.10.0\buildTransitive\Xamarin.Build.Download.targets')" />
+    <Import Project="$(NuGetPackageRoot)system.text.json\7.0.1\buildTransitive\netstandard2.0\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\7.0.1\buildTransitive\netstandard2.0\System.Text.Json.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\7.0.0\buildTransitive\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\7.0.0\buildTransitive\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.targets')" />
   </ImportGroup>
 </Project>
