@@ -5,7 +5,9 @@
        xmlns:request="clr-namespace:CarPoolingPassengerAPP.Views.Request"
        xmlns:menu="clr-namespace:CarPoolingPassengerAPP.Views.Menu"
        xmlns:auth="clr-namespace:CarPoolingPassengerAPP.Views.Auth"
-       x:Class="CarPoolingPassengerAPP.AppShell">
+       x:Class="CarPoolingPassengerAPP.AppShell"
+       Shell.TabBarTitleColor="Black"
+       Shell.BackgroundColor="#f5c542">
 
     <TabBar>
         <Tab Title="Home" Icon="home.png" Route="HomePage">

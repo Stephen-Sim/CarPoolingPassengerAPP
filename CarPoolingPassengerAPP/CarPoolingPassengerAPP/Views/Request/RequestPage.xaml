@@ -9,11 +9,14 @@
             <Image Margin="0, 0, 0, 10" Source="header" HorizontalOptions="Start"/>
 
             <StackLayout Grid.Row="1">
-                <ListView ItemsSource="{Binding Requests}" HasUnevenRows="True" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsRefreshing}" RefreshCommand="{Binding ListViewRereshed}">
+                <ListView x:Name="RequestListView" ItemsSource="{Binding Requests}" HasUnevenRows="True" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsRefreshing}" RefreshCommand="{Binding ListViewRereshed}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <Frame BorderColor="Black" HeightRequest="100" Padding="10" Margin="5" BackgroundColor="LightYellow">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.ListViewItemTapped, Source={x:Reference Name=RequestListView}}" CommandParameter="{Binding .}"/>
+                                    </Frame.GestureRecognizers>
                                     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                         <Label FontSize="20">
                                             <Label.FormattedText>

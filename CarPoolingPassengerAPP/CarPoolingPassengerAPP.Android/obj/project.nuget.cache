@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lCR/EyDex9vmHNqFl+/VsyO+8wZUAciStOkOVjhHeA0tnYZ6cMvvuVNS8H9kvSQiSkJJjMYjDhPfsJ8tNNoT1A==",
+  "dgSpecHash": "+I3pZLJ9XPjoqDtzoc724IA9nunL/Og8Yx6xdcR7A9jBof78chxjnt88B7bIqJ4gv+z03cZ2Do/GP8UrBmkIyQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\simsh\\Desktop\\CarPooling System\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP.Android\\CarPoolingPassengerAPP.Android.csproj",
   "expectedPackageFiles": [
@@ -74,7 +74,8 @@
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.googleplayservices.base\\117.1.0\\xamarin.googleplayservices.base.117.1.0.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.googleplayservices.basement\\117.1.0\\xamarin.googleplayservices.basement.117.1.0.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.googleplayservices.maps\\117.0.0\\xamarin.googleplayservices.maps.117.0.0.nupkg.sha512",
-    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.googleplayservices.tasks\\117.0.0\\xamarin.googleplayservices.tasks.117.0.0.nupkg.sha512"
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.googleplayservices.tasks\\117.0.0\\xamarin.googleplayservices.tasks.117.0.0.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.rating\\1.0.0.2\\xamarin.rating.1.0.0.2.nupkg.sha512"
   ],
   "logs": []
 }

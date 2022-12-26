@@ -28,7 +28,7 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
                 return new Command(async () => 
                 {
                     var address = (await geocoder.GetAddressesForPositionAsync(this.Position)).FirstOrDefault()?.ToString();
-
+                    address = address.Replace('&', ',');
                     bool result = await Application.Current.MainPage.DisplayAlert("Confirm the Location", $"{(address.Length > 100 ? address.Substring(0, 97) + "..." : address)}", "YES", "NO");
 
                     if (result)

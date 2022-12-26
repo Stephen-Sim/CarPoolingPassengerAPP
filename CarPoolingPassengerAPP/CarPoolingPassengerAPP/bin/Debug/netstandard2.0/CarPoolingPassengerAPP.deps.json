@@ -14,7 +14,8 @@
           "Xam.Plugin.Geolocator": "4.5.0.6",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2125",
-          "Xamarin.Forms.Maps": "5.0.0.2125"
+          "Xamarin.Forms.Maps": "5.0.0.2125",
+          "Xamarin.Rating": "1.0.0.2"
         },
         "runtime": {
           "CarPoolingPassengerAPP.dll": {}
@@ -87,6 +88,18 @@
             "fileVersion": "5.0.0.747"
           }
         }
+      },
+      "Xamarin.Rating/1.0.0.2": {
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.0",
+          "Xamarin.Forms": "5.0.0.2125"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Rating.dll": {
+            "assemblyVersion": "1.0.0.2",
+            "fileVersion": "1.0.0.2"
+          }
+        }
       }
     }
   },
@@ -151,6 +164,13 @@
       "sha512": "sha512-2FDWADipiF8agAqoFNOTHdefJsIO1mHdLe/yI9GxdVtnIUPrs7CR7z48XWMx+1h0/nltTzQEpSksqImg7gZshQ==",
       "path": "xamarin.forms.maps/5.0.0.2125",
       "hashPath": "xamarin.forms.maps.5.0.0.2125.nupkg.sha512"
+    },
+    "Xamarin.Rating/1.0.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-udVmz8Y+GeqMHG6zgAlNnvenyWv/PrwKZnw+8dqh9h7t/IeBGm2xtNpjBug+K9vFl+fjFSODwP+Xgut+yILI8Q==",
+      "path": "xamarin.rating/1.0.0.2",
+      "hashPath": "xamarin.rating.1.0.0.2.nupkg.sha512"
     }
   }
 }

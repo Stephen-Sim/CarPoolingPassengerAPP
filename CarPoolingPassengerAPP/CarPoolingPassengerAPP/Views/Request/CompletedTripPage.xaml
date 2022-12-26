@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:request="clr-namespace:CarPoolingPassengerAPP.ViewModels.Request" xmlns:rating="clr-namespace:Rating;assembly=Rating"
+             x:Class="CarPoolingPassengerAPP.Views.Request.CompletedTripPage" Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <request:CompletedTripPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#f5c542"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="*, 150, 70">
+            <ContentView Content="{Binding Map}"/>
+            <Frame Grid.Row="1" BorderColor="Black" Padding="20" Margin="5" BackgroundColor="LightYellow" CornerRadius="20">
+                <StackLayout HorizontalOptions="Center">
+                    <Label FontSize="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="How was the experience with driver, "/>
+                                <Span Text="{Binding DriverName}"/>
+                                <Span Text=". Rate it out:"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <rating:RatingBar Command="{Binding RatingBarTapped}" SelectedStarValue="{Binding RatingValue}" ImageHeight="30" ImageWidth="30" HorizontalOptions="Center" FlowDirection="LeftToRight" EmptyStarImage="unratedstar" FillStarImage="ratedstar"/>
+                </StackLayout>
+            </Frame>
+            <Button Grid.Row="2" FontSize="20" Margin="5, 0, 5, 10" HeightRequest="50" CornerRadius="50" Command="{Binding PlaceTheRequestButtonClicked}" Text="Place the Trip Again"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

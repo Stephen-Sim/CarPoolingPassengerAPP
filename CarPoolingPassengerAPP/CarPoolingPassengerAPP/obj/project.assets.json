@@ -121,6 +121,19 @@
             "related": ".xml"
           }
         }
+      },
+      "Xamarin.Rating/1.0.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.6.1",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/netstandard2.0/Rating.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Rating.dll": {}
+        }
       }
     }
   },
@@ -661,6 +674,18 @@
         "xamarin.forms.maps.5.0.0.2125.nupkg.sha512",
         "xamarin.forms.maps.nuspec"
       ]
+    },
+    "Xamarin.Rating/1.0.0.2": {
+      "sha512": "udVmz8Y+GeqMHG6zgAlNnvenyWv/PrwKZnw+8dqh9h7t/IeBGm2xtNpjBug+K9vFl+fjFSODwP+Xgut+yILI8Q==",
+      "type": "package",
+      "path": "xamarin.rating/1.0.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Rating.dll",
+        "xamarin.rating.1.0.0.2.nupkg.sha512",
+        "xamarin.rating.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -670,7 +695,8 @@
       "Xam.Plugin.Geolocator >= 4.5.0.6",
       "Xamarin.Essentials >= 1.7.0",
       "Xamarin.Forms >= 5.0.0.2125",
-      "Xamarin.Forms.Maps >= 5.0.0.2125"
+      "Xamarin.Forms.Maps >= 5.0.0.2125",
+      "Xamarin.Rating >= 1.0.0.2"
     ]
   },
   "packageFolders": {
@@ -743,6 +769,10 @@
           "Xamarin.Forms.Maps": {
             "target": "Package",
             "version": "[5.0.0.2125, )"
+          },
+          "Xamarin.Rating": {
+            "target": "Package",
+            "version": "[1.0.0.2, )"
           }
         },
         "imports": [

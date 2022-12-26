@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ll7lJpgspzljnkGOmGq56d2Kg5Lz9YGHiT4LVLTQpTBqHrwWJWT/grhgMHHG+VoIMwrJrflgGXSkg4RPkskYuQ==",
+  "dgSpecHash": "UqI6Unn1jl0jbWfhDiTw/ULOzOx5+TKgTry5lsV+rnXr/OH2lhMwQdNnlzxnDVPh3P7Ck12uS6J5bmCq3g+10g==",
   "success": true,
   "projectFilePath": "C:\\Users\\simsh\\Desktop\\CarPooling System\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP\\CarPoolingPassengerAPP.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,8 @@
     "C:\\Users\\simsh\\.nuget\\packages\\xam.plugin.geolocator\\4.5.0.6\\xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\simsh\\.nuget\\packages\\xamarin.forms\\5.0.0.2125\\xamarin.forms.5.0.0.2125.nupkg.sha512",
-    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2125\\xamarin.forms.maps.5.0.0.2125.nupkg.sha512"
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2125\\xamarin.forms.maps.5.0.0.2125.nupkg.sha512",
+    "C:\\Users\\simsh\\.nuget\\packages\\xamarin.rating\\1.0.0.2\\xamarin.rating.1.0.0.2.nupkg.sha512"
   ],
   "logs": []
 }

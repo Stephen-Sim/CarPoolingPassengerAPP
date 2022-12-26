@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:chat="clr-namespace:CarPoolingPassengerAPP.ViewModels.Request.Chat"
+             x:Class="CarPoolingPassengerAPP.Views.Request.Chat.ChatDriverPage">
+
+    <ContentPage.BindingContext>
+        <chat:ChatDriverPageViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        
+    </ContentPage.Content>
+</ContentPage>

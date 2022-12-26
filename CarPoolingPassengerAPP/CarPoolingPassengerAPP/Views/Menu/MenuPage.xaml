@@ -29,21 +29,21 @@
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ChangePasswordFrameClicked}"/>
                             </Frame.GestureRecognizers>
-                            <Label Text="Change Password" FontAttributes="Bold" FontSize="25"/>
+                            <Label Text="Change Password" FontSize="25"/>
                         </Frame>
 
                         <Frame Margin="0, -10, 0, 0" BorderColor="LightGray">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding AboutTheAppFrameClicked}"/>
                             </Frame.GestureRecognizers>
-                            <Label Text="About the App" FontAttributes="Bold" FontSize="25"/>
+                            <Label Text="About the App" FontSize="25"/>
                         </Frame>
 
                         <Frame Margin="0, -10, 0, 0" BorderColor="LightGray">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ExitFrameClicked}"/>
                             </Frame.GestureRecognizers>
-                            <Label Text="Exit" FontAttributes="Bold" FontSize="25"/>
+                            <Label Text="Exit" FontSize="25"/>
                         </Frame>
                     </StackLayout>
                     

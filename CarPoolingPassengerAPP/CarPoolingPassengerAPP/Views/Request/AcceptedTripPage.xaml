@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:request="clr-namespace:CarPoolingPassengerAPP.ViewModels.Request"
+             x:Class="CarPoolingPassengerAPP.Views.Request.AcceptedTripPage" Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <request:AcceptedTripPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#f5c542"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="*, 180">
+            <ContentView Content="{Binding Map}"/>
+            <Frame Margin="10" BorderColor="Black" Grid.Row="1" BackgroundColor="LightYellow">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ChatDriverFrameClicked}"/>
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="80, *">
+                    <Frame Margin="0" Padding="0" CornerRadius="60" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="80" WidthRequest="80" BackgroundColor="Transparent" BorderColor="Gray">
+                        <Image Source="{Binding DriverProfileImage, TargetNullValue='profile'}"/>
+                    </Frame>
+                    <Grid Grid.Column="1" RowDefinitions="*, *, 20" Padding="15">
+                        <Label Grid.Row="0" FontSize="22">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Info.DriverName}" FontAttributes="Bold" FontSize="22"/>
+                                    <Span Text=" ("/>
+                                    <Span Text="{Binding Info.Rating}"/>
+                                    <Span Text="⭐)"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="1" FontSize="18">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Info.CarName}"/>
+                                    <Span Text=" ("/>
+                                    <Span Text="{Binding Info.CarPlatNo}"/>
+                                    <Span Text=")"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="2" FontSize="15">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Date Time: "/>
+                                    <Span Text="{Binding Info.Date}"/>
+                                    <Span Text=" ("/>
+                                    <Span Text="{Binding Info.Time}"/>
+                                    <Span Text=")"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

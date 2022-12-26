@@ -47,3 +47,8 @@ C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassen
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Request\RequestPage.xaml.g.cs
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Home\PinEndLocationPage.xaml.g.cs
 C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Home\ConfirmRequestPage.xaml.g.cs
+C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Request\AcceptedTripPage.xaml.g.cs
+C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Request\CanceledTripPage.xaml.g.cs
+C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Request\CompletedTripPage.xaml.g.cs
+C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Request\SearchingTripPage.xaml.g.cs
+C:\Users\simsh\Desktop\CarPooling System\CarPoolingPassengerAPP\CarPoolingPassengerAPP\CarPoolingPassengerAPP\obj\Debug\netstandard2.0\Views\Request\Chat\ChatDriverPage.xaml.g.cs

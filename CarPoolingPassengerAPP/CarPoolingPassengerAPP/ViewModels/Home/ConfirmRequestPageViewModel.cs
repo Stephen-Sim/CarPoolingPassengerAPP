@@ -65,6 +65,8 @@ namespace CarPoolingPassengerAPP.ViewModels.Home
                     Position = new Position((double)Request.ToLatitude, (double)Request.ToLongitude)
                 };
 
+                Request.Charges = Request.Charges * Request.NumberOfPassengers;
+
                 AddonsText = $"Tatol Charges RM {Request.Charges?.ToString("0.00")} ({Request.NumberOfPassengers} 🤵), Select Add ons: ";
 
                 Map.Pins.Add(StartPin);

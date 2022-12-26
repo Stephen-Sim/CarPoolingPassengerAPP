@@ -1,6 +1,7 @@
 ﻿using CarPoolingPassengerAPP.Models;
 using CarPoolingPassengerAPP.Services;
 using CarPoolingPassengerAPP.Views.Menu;
+using CarPoolingPassengerAPP.Views.Request;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -55,6 +56,33 @@ namespace CarPoolingPassengerAPP.ViewModels.Request
                     IsRefreshing = true;
                     this.LoadData();
                     IsRefreshing = false;
+                });
+            }
+        }
+
+        public Command ListViewItemTapped
+        {
+            get
+            {
+                return new Command(async (sender) => {
+                    var request = (RequestRequest)sender;
+
+                    if (request.Status == "Searching")
+                    {
+                        await Shell.Current.GoToAsync($"Request/{nameof(SearchingTripPage)}?RequestId={request.Id}");
+                    }
+                    else if (request.Status == "Accepted")
+                    {
+                        await Shell.Current.GoToAsync($"Request/{nameof(AcceptedTripPage)}?RequestId={request.Id}");
+                    }
+                    else if (request.Status == "Canceled")
+                    {
+                        await Shell.Current.GoToAsync($"Request/{nameof(CanceledTripPage)}?RequestId={request.Id}");
+                    }
+                    else if (request.Status == "Completed")
+                    {
+                        await Shell.Current.GoToAsync($"Request/{nameof(CompletedTripPage)}?RequestId={request.Id}");
+                    }
                 });
             }
         }
