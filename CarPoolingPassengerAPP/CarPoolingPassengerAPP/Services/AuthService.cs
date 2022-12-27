@@ -24,6 +24,22 @@ namespace CarPoolingPassengerAPP.Services
             client = new HttpClient();
         }
 
+        public async Task<bool> ConnectToServer()
+        {
+            try
+            {
+                string url = $"{this.url}ConnectToServer";
+                var res = await client.GetStringAsync(url);
+                return true;
+
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
+
         public async Task<bool> Login(LoginRequest request)
         {
             try

@@ -25,6 +25,13 @@ namespace CarPoolingPassengerAPP
 
         public async Task ValidateAuthentication()
         {
+            var connect = await authService.ConnectToServer();
+            if (!connect)
+            {
+                await App.Current.MainPage.DisplayAlert("Alert", "Server Down", "Ok");
+                System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+            }
+
             if (Application.Current.Properties.ContainsKey("token"))
             {
                 var token = Application.Current.Properties["token"] as string;
