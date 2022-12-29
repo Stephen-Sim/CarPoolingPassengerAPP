@@ -15,8 +15,21 @@ namespace CarPoolingPassengerAPP.ViewModels.Auth
     {
         public AuthService authService { get; set; }
 
-        public string Username { get; set; } = null;
-        public string Password { get; set; } = null;
+        private string username = string.Empty;
+
+        public string Username
+        {
+            get { return username; }
+            set { username = value; OnPropertyChanged(); }
+        }
+
+        private string password = string.Empty;
+
+        public string Password
+        {
+            get { return password; }
+            set { password = value; OnPropertyChanged(); }
+        }
         public ICommand SignInButtonClick
         {
             get
@@ -41,6 +54,8 @@ namespace CarPoolingPassengerAPP.ViewModels.Auth
                     {
                         await Application.Current.MainPage.DisplayAlert("Alert", "Successfully Login!!", "Ok");
                         await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+                        Username = string.Empty;
+                        Password = string.Empty;
                     }
                     else
                     {

@@ -29,7 +29,7 @@
                                 <FormattedString>
                                     <Span Text="{Binding Info.DriverName}" FontAttributes="Bold" FontSize="22"/>
                                     <Span Text=" ("/>
-                                    <Span Text="{Binding Info.Rating}"/>
+                                    <Span Text="{Binding Info.Rating, TargetNullValue='0.0'}"/>
                                     <Span Text="⭐)"/>
                                 </FormattedString>
                             </Label.FormattedText>
