@@ -10,6 +10,7 @@ namespace CarPoolingPassengerAPP.Models
         public byte[] DriverImage { get; set; } = null;
         public string CarName { get; set; }
         public string CarPlatNo { get; set; }
+        public string CarColor { get; set; }
         public string Rating { get; set; } = string.Empty;
         public string Date { get; set; }
         public string Time { get; set; }

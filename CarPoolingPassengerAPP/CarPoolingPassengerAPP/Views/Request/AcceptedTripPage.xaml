@@ -39,6 +39,8 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="{Binding Info.CarName}"/>
+                                    <Span Text=" - "/>
+                                    <Span Text="{Binding Info.CarColor}"/>
                                     <Span Text=" ("/>
                                     <Span Text="{Binding Info.CarPlatNo}"/>
                                     <Span Text=")"/>
